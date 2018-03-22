@@ -11,6 +11,6 @@ class UserModel extends Model
      *
      * @var string
      */
-    protected $table = 'user';
+    protected $table = 'visitor';
     public $timestamps = false;
 }

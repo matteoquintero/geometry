@@ -15,7 +15,7 @@
 	            </div>
 	      </div>
 	      <div class="modal-footer">
-	        <button id="auth-button" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Ingresar</button>
+	        <button id="auth-button" type="button" class="btn btn-danger btn-block">Ingresar</button>
 	      </div>
 	    </form>
     </div>

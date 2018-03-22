@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\UserModel as User;
-use App\VideoModel as Video;
 use Illuminate\Support\Facades\Cache;
 
 class CacheController extends Controller
@@ -16,22 +14,22 @@ class CacheController extends Controller
      *
      * @return Response
      */
-    public function check()
+    public static function check($value)
     {
-        $users = User::all();
-        if (Cache::get('email')!="") {
-	        $videos = Video::all();
-	        return view('index', ['videos' => $videos,'alert' => array('show' => 'no')]);
-        }else{
-             return view('login-register', ['alert' => array('show' => 'yes', 'title' => 'Autenticación','body'=> 'Ingresa o registrate para ver los videos' )]);   	
-        }
+        $response = (Cache::get($value)!="") ? true:false;
+        return $response;
 
     }
 
-    public function create(Request $request)
+    public static function get($value)
+    {
+        return Cache::get($value);
+
+    }
+
+    public static function create(Request $request)
     {
 		$expiresAt = now()->addMinutes(30);
 		Cache::put('email', $request->email, $expiresAt);
-
     }
 }

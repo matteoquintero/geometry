@@ -7,14 +7,6 @@
     @parent
 @endsection
 
-@if ($alert['show'] == 'yes')
-    @component('alert')
-    @slot('title')
-        {{$alert['title']}}
-    @endslot
-    {{$alert['body']}}
-    @endcomponent  
-@endif
 
 @section('content')
 <div id="login-register">
@@ -80,7 +72,7 @@
               </div>
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
-                  <button id="create-user-button" type="button" class="btn btn-danger btn-block">Registrate</button>
+                  <button id="create-user-button" type="button" class="btn btn-danger btn-block">Regístrate</button>
                 </div>
               </div>
             </div>
@@ -92,6 +84,15 @@
 @component('back') @endcomponent
 
 @component('modal') @endcomponent
+
+@if ($alert['show'] == 'yes')
+    @component('alert')
+    @slot('title')
+        {{$alert['title']}}
+    @endslot
+    {{$alert['body']}}
+    @endcomponent  
+@endif
 
 @endsection
 @push('scripts')

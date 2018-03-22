@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ViewModel extends Model
+class UsersModel extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'view';
+    protected $table = 'getusers';
     public $timestamps = false;
 }

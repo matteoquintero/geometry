@@ -18,6 +18,7 @@ function auth(formname) {
   showerrors(form);
 
   form.validate({
+    rules: {
       email: {
         required: true,
         email: true
@@ -31,7 +32,8 @@ function auth(formname) {
     }
   });
   if (form.valid()) {
-    jQuery( "#"+formname ).submit();  
+  	alert("asd");
+    //jQuery( "#"+formname ).submit();  
   }
 };
 
