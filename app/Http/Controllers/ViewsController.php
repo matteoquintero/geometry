@@ -20,11 +20,11 @@ class ViewsController extends Controller
     public static function showbyid(Request $request, $id)
     {	
         $views = self::getbyid($id);
-		return view('views', ['views' => $views]);
+		return view('views', ['views' => $views,'id' => $id]);
     }
      public static function getbyid($id)
     {
-		return Views::where('idUser', $id)->get();
+		return Views::where('idVisitor', $id)->get();
     }
 
 

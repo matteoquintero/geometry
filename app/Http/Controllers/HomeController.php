@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\UserController as User;
+use App\Http\Controllers\VisitorController as Visitor;
 
 class HomeController extends Controller
 {
@@ -23,8 +23,9 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {	
-    	$users=User::get();
-        return view('users', ['users' => $users]);
+    {
+
+        $visitors = Visitor::get();
+        return view('visitors', ['visitors' => $visitors]);
     }
 }

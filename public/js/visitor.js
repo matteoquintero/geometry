@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $("#create-user-button").on( "click", function(event) { 
+  $("#create-visitor-button").on( "click", function(event) { 
     event.preventDefault();
-    createuser('create-user'); 
+    createvisitor('create-visitor'); 
   });
 
   $("#auth-button").on( "click", function(event) { 
@@ -38,7 +38,7 @@ function auth(formname) {
 };
 
 
-function createuser(formname) {
+function createvisitor(formname) {
 
   var form, message, response;
   form = jQuery('#'+formname);

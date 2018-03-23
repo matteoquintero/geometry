@@ -12,9 +12,8 @@
 <div id="login-register">
   <div class="row align-items-center">
       <div class="col-sm-12 col-md-10 offset-md-2 col-lg-8 offset-lg-4">
-          <form action="{{action('UserController@create')}}" method="post" id="create-user">
+          <form action="{{action('VisitorController@create')}}" method="post" id="create-visitor">
             {{ csrf_field() }}
-            <input type="hidden" name="idRol" id="idRol" value="2">
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
@@ -72,7 +71,7 @@
               </div>
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
-                  <button id="create-user-button" type="button" class="btn btn-danger btn-block">Regístrate</button>
+                  <button id="create-visitor-button" type="button" class="btn btn-danger btn-block">Regístrate</button>
                 </div>
               </div>
             </div>
@@ -98,5 +97,5 @@
 @push('scripts')
   <script type="text/javascript" src="{{ URL::asset('js/jquery-validate.min.js') }}"></script>
   <script type="text/javascript" src="{{ URL::asset('js/onkeypress.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/user.js') }}"></script>
+  <script type="text/javascript" src="{{ URL::asset('js/visitor.js') }}"></script>
 @endpush

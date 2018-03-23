@@ -18,6 +18,7 @@
                         <h2> Excepteur sint <strong>Officia</strong> anim id est</h2>
                     </div>
                     <div class="col-sm-12 col-md-6">
+
                         <h3>@yield('section')</h3>
                     </div>
                 </div>

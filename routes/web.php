@@ -1,21 +1,26 @@
 <?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 	Route::get("/",'VideoController@showall');
 	Route::get("/video/{id}",'VideoController@showbyid');
 
-	Route::get("/login-register",function(){
-		return view('login-register', ['alert' => array('show' => 'no')]);
-	});
-	Route::get("/new-user",'UserController@create');
+    Route::get("/views/{id}",'ViewsController@showbyid');
 
-	Route::post("/auth",'CacheController@create');
+    Route::post("/create-visitor",'VisitorController@create');
+	Route::post("/enter-visitor",'CacheController@create');
 
-	Route::get('admin-login', array('uses' => 'AuthController@show'));
-	Route::post('login', array('uses' => 'AuthController@login'));
+    Auth::routes();
+    Route::get('/admin', 'HomeController@index')->name('admin');
 
-	Route::get("/views/{id}",'ViewsController@showbyid');
-
-	Auth::routes();
-
-	Route::get('/admin-login', 'HomeController@index')->name('dashborad');
-
-?>
+    Route::get("/excel-visitors",'ExcelController@visitors');
+    Route::get("/excel-view/{id}",'ExcelController@view');
+    Route::get("/excel-views",'ExcelController@views');

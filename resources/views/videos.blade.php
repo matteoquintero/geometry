@@ -25,7 +25,7 @@
         
         <div class="row justify-content-center">
             @foreach ($videos as $video)
-                    <div class="col-sm-12 col-md-6 col-lg-4 video">
+                    <div class="col-sm-12 col-md-6 col-lg-4 video animated slideInLeft">
                         <a href="/video/{{$video->id}}">
                             <strong>{{ $video->name }}</strong>
                             <img  src="http://via.placeholder.com/380x200">

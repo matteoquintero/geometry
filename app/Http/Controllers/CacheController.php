@@ -30,6 +30,13 @@ class CacheController extends Controller
     public static function create(Request $request)
     {
 		$expiresAt = now()->addMinutes(30);
-		Cache::put('email', $request->email, $expiresAt);
+		self::put('email', $request->email, $expiresAt);
     }
+
+    public static function put($key, $value)
+    {
+        $expiresAt = now()->addMinutes(30);
+        Cache::put($key, $value, $expiresAt);
+    }
+
 }

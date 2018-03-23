@@ -11,7 +11,7 @@ class ViewsModel extends Model
      *
      * @var string
      */
-    protected $table = 'getviews';
+    protected $table = 'views';
     public $timestamps = false;
 
 }
